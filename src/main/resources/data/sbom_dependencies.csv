@@ -1,0 +1,11 @@
+application,library,version,license,last_updated,is_direct
+HR Portal,Spring Boot,3.3.0,Apache-2.0,2025-01-01,true
+HR Portal,Log4j,2.14.1,Apache-2.0,2021-05-01,false
+HR Portal,Jackson,2.15.0,Apache-2.0,2024-10-10,true
+Expense Tracker,SnakeYAML,1.30,Apache-2.0,2022-01-10,false
+Expense Tracker,Hibernate,6.2.0,LGPL,2024-08-01,true
+CRM,Commons-IO,2.6,Apache-2.0,2020-03-15,false
+Inventory,Apache POI,5.2.3,Apache-2.0,2024-01-01,true
+Payroll,Log4j,2.14.1,Apache-2.0,2021-05-01,false
+Billing,Spring Boot,3.3.0,Apache-2.0,2025-01-01,true
+ERP,Commons-Collections,3.2.1,Apache-2.0,2019-05-10,false

@@ -1,0 +1,22 @@
+[
+  {
+    "license":"Apache-2.0",
+    "compatible":true,
+    "risk":"LOW"
+  },
+  {
+    "license":"MIT",
+    "compatible":true,
+    "risk":"LOW"
+  },
+  {
+    "license":"GPL",
+    "compatible":false,
+    "risk":"HIGH"
+  },
+  {
+    "license":"LGPL",
+    "compatible":true,
+    "risk":"MEDIUM"
+  }
+]

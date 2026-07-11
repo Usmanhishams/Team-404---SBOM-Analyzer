@@ -1,0 +1,6 @@
+application,library,risk_status,risk_type,severity,explanation
+HR Portal,Log4j,RISK,VULNERABILITY,CRITICAL,Known Log4Shell vulnerability
+Expense Tracker,SnakeYAML,RISK,VULNERABILITY,HIGH,Unsafe deserialization
+CRM,Commons-IO,RISK,UNMAINTAINED,MEDIUM,Outdated library
+Inventory,Apache POI,SAFE,NONE,NONE,Latest version
+Payroll,Log4j,RISK,VULNERABILITY,CRITICAL,Known Log4Shell vulnerability

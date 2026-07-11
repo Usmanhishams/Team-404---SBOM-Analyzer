@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "name": "HR Portal",
+    "owner": "HR Team",
+    "criticality": "HIGH"
+  },
+  {
+    "id": 2,
+    "name": "Expense Tracker",
+    "owner": "Finance Team",
+    "criticality": "MEDIUM"
+  },
+  {
+    "id": 3,
+    "name": "CRM",
+    "owner": "Sales Team",
+    "criticality": "HIGH"
+  },
+  {
+    "id": 4,
+    "name": "Inventory",
+    "owner": "Operations",
+    "criticality": "LOW"
+  },
+  {
+    "id": 5,
+    "name": "Payroll",
+    "owner": "Finance",
+    "criticality": "HIGH"
+  },
+  {
+    "id": 6,
+    "name": "Customer Portal",
+    "owner": "Support",
+    "criticality": "HIGH"
+  },
+  {
+    "id": 7,
+    "name": "Analytics",
+    "owner": "BI Team",
+    "criticality": "MEDIUM"
+  },
+  {
+    "id": 8,
+    "name": "ERP",
+    "owner": "Operations",
+    "criticality": "HIGH"
+  },
+  {
+    "id": 9,
+    "name": "Billing",
+    "owner": "Finance",
+    "criticality": "HIGH"
+  },
+  {
+    "id": 10,
+    "name": "DevOps Portal",
+    "owner": "Engineering",
+    "criticality": "MEDIUM"
+  }
+]
