@@ -39,7 +39,7 @@ The application enables organizations to gain better visibility into the securit
 - Spring Data JPA
 
 ### Database
-- MySQL
+- H2 Database
 
 ### Build Tool
 - Maven
@@ -69,7 +69,7 @@ The application enables organizations to gain better visibility into the securit
       └───────────────────────────┘
                   │
                   ▼
-                MySQL
+                H2 database
 ```
 
 ---
@@ -204,7 +204,7 @@ The dashboard provides:
 
 - Java 17
 - Maven
-- MySQL 8.x
+- H2 database
 - IntelliJ IDEA (recommended)
 
 ## Installation
@@ -221,7 +221,7 @@ git clone https://github.com/Usmanhishams/Team-404---SBOM-Analyzer.git
 cd Team-404---SBOM-Analyzer
 ```
 
-3. Configure MySQL in `application.properties`
+3. Configure H2 database in `application.properties`
 
 4. Run the Spring Boot application
 
