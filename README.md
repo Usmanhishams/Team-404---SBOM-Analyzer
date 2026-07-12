@@ -200,6 +200,80 @@ The dashboard provides:
 
 ---
 
+## Prerequisites
+
+- Java 17
+- Maven
+- MySQL 8.x
+- IntelliJ IDEA (recommended)
+
+## Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/Usmanhishams/Team-404---SBOM-Analyzer.git
+```
+
+2. Navigate to the project
+
+```bash
+cd Team-404---SBOM-Analyzer
+```
+
+3. Configure MySQL in `application.properties`
+
+4. Run the Spring Boot application
+
+5. Open
+
+```
+http://localhost:8080 or http://localhost:8080/index.html
+```
+
+## Input Files
+
+Upload the following files:
+
+- applications.json
+- dependencies.csv
+- vulnerabilities.json
+- license_rules.json
+- transitive_dependency.json
+
+## Output
+
+The application generates:
+
+- Risk Score
+- Risk Level
+- Vulnerability Report
+- License Compatibility Report
+- Outdated Libraries
+- Recommendations
+
+# Screenshots
+
+## Dashboard
+
+![Dashboard](images/dashboard.png)
+
+---
+
+## Risk Report
+
+![Risk Report](images/applicationOverview.png)
+
+---
+
+## Upload Page
+
+![Upload Page](images/fileupload.png)
+
+## details Page
+
+![Detail Page](images/detailedReport.png)
+
 ## Future Enhancements
 
 - Support for CycloneDX and SPDX SBOM formats
