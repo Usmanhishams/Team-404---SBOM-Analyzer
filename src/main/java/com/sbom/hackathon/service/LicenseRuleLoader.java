@@ -7,6 +7,7 @@ import com.sbom.hackathon.repository.LicenseRuleRepo;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 
+import java.io.InputStream;
 import java.util.List;
 
 @Service
@@ -22,11 +23,9 @@ public class LicenseRuleLoader {
         this.repository = repository;
     }
 
-    @PostConstruct
-    public void load() {
+    public void load(InputStream input) {
 
-        List<LicenseRuleDTO> list = parser.parse();
-
+        List<LicenseRuleDTO> list = parser.parse(input);
         for (LicenseRuleDTO dto : list) {
 
             LicenseRule rule = new LicenseRule(
@@ -43,9 +42,6 @@ public class LicenseRuleLoader {
             repository.save(rule);
 
         }
-
-
-        System.out.println("--------------------------------");
 
     }
 

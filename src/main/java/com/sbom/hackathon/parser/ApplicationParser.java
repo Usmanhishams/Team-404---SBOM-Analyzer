@@ -11,14 +11,11 @@ import java.util.List;
 @Component
 public class ApplicationParser {
 
-    public List<ApplicationDTO> parseApplications() {
+    public List<ApplicationDTO> parseApplications(InputStream inputStream) {
 
         try {
 
             ObjectMapper mapper = new ObjectMapper();
-
-            InputStream inputStream =
-                    getClass().getResourceAsStream("/data/applications.json");
 
             if (inputStream == null) {
                 throw new RuntimeException("applications.json not found");

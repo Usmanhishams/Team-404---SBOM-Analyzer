@@ -7,6 +7,7 @@ import com.sbom.hackathon.repository.TransitiveDependencyRepo;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 
+import java.io.InputStream;
 import java.util.List;
 import java.util.*;
 
@@ -27,10 +28,10 @@ public class TransitiveDependencyLoader {
         this.graphBuilderService = graphBuilderService;
     }
 
-    @PostConstruct
-    public void load() {
 
-        List<TransitiveDependencyDTO> list = parser.parse();
+    public void load(InputStream input) {
+
+        List<TransitiveDependencyDTO> list = parser.parse(input);
         System.out.println("Parsed DTOs = " + list.size());
 
         for (TransitiveDependencyDTO dto : list) {
@@ -51,8 +52,6 @@ public class TransitiveDependencyLoader {
             );
 
         }
-        System.out.println("Saved Records = " + repository.count());
-
         graphBuilderService.buildGraph();
     }
 

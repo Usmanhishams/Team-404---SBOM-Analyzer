@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBOM Risk Analyzer</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <header>
+        <h1>SBOM Risk Analyzer</h1>
+        <p>Software Supply Chain Risk Assessment Dashboard</p>
+    </header>
+
+    <section class="card">
+
+        <h2>Upload SBOM Files</h2>
+
+        <div class="upload-grid">
+
+            <div class="upload-item">
+                <label>Applications JSON</label>
+                <input type="file" id="applications">
+            </div>
+
+            <div class="upload-item">
+                <label>Dependencies CSV</label>
+                <input type="file" id="dependencies">
+            </div>
+
+            <div class="upload-item">
+                <label>Vulnerabilities JSON</label>
+                <input type="file" id="vulnerabilities">
+            </div>
+
+            <div class="upload-item">
+                <label>License Rules JSON</label>
+                <input type="file" id="licenses">
+            </div>
+
+            <div class="upload-item">
+                <label>Transitive Dependency JSON</label>
+                <input type="file" id="transitive">
+            </div>
+
+        </div>
+
+        <button id="analyzeBtn">
+            Analyze
+        </button>
+
+    </section>
+
+    <section class="card">
+
+        <h2>Applications</h2>
+
+        <table id="applicationTable">
+
+            <thead>
+
+            <tr>
+                <th>Rank</th>
+                <th>Application ID</th>
+                <th>Application Name</th>
+                <th>Risk Score</th>
+                <th>Risk Level</th>
+                <th>Vulnerabilities</th>
+                <th>License Issues</th>
+                <th>Outdated Libraries</th>
+                <th>Action</th>
+            </tr>
+
+            </thead>
+
+            <tbody id="applicationBody">
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+    <div id="detailsModal" class="modal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h2>Application Risk Report</h2>
+
+                <span class="close" onclick="closeModal()">&times;</span>
+
+            </div>
+
+            <div class="summary">
+
+                <div class="summary-card">
+                    <h4>Application</h4>
+                    <p id="appName"></p>
+                </div>
+
+                <div class="summary-card">
+                    <h4>Risk Score</h4>
+                    <p id="riskScore"></p>
+                </div>
+
+                <div class="summary-card">
+                    <h4>Risk Level</h4>
+                    <p id="riskLevel"></p>
+                </div>
+
+                <div class="summary-card">
+                    <h4>Vulnerabilities</h4>
+                    <p id="vulCount"></p>
+                </div>
+
+                <div class="summary-card">
+                    <h4>License Issues</h4>
+                    <p id="licenseCount"></p>
+                </div>
+
+                <div class="summary-card">
+                    <h4>Outdated Libraries</h4>
+                    <p id="outdatedCount"></p>
+                </div>
+
+                <div class="summary-card">
+                    <h4>Transitive Issues</h4>
+                    <p id="transitiveCount"></p>
+                </div>
+
+            </div>
+
+            <h3>Vulnerabilities</h3>
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>CVE</th>
+                    <th>Tech Stack</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="vulnerabilityBody">
+
+                </tbody>
+
+            </table>
+
+            <h3>License Issues</h3>
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>Tech Stack</th>
+                    <th>License</th>
+                    <th>Status</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="licenseBody">
+
+                </tbody>
+
+            </table>
+
+            <h3>Outdated Libraries</h3>
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>Tech Stack</th>
+                    <th>Status</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="outdatedBody">
+
+                </tbody>
+
+            </table>
+
+            <h3>Recommendations</h3>
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>Tech Stack</th>
+                    <th>Recommendation</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="recommendationBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+
+
+</div>
+
+<script src="script.js"></script>
+<div id="loadingOverlay">
+
+    <div class="loader"></div>
+
+    <h2>Analyzing SBOM...</h2>
+
+    <p>Please wait while we generate the risk report.</p>
+
+</div>
+
+</body>
+</html>

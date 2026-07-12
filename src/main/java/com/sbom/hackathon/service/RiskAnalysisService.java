@@ -195,7 +195,7 @@ public class RiskAnalysisService {
                     report.getRecommendations().add(
                             "Upgrade "
                                     + dependency.getLibrary()
-                                    + " to a newer maintained version."
+                                    + " to the latest stable version."
                     );
                 }
             } catch (Exception e) {

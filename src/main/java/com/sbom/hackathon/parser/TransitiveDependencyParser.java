@@ -11,24 +11,16 @@ import java.util.List;
 @Component
 public class TransitiveDependencyParser {
 
-    public List<TransitiveDependencyDTO> parse() {
+    public List<TransitiveDependencyDTO> parse(InputStream input) {
 
         try {
-
             ObjectMapper mapper = new ObjectMapper();
-
-            InputStream input =
-                    getClass().getResourceAsStream("/data/transitive_dependency.json");
-
             return mapper.readValue(
                     input,
                     new TypeReference<List<TransitiveDependencyDTO>>() {}
             );
-
         } catch (Exception e) {
-
             throw new RuntimeException(e);
-
         }
 
     }

@@ -10,7 +10,6 @@ import java.util.*;
 public class GraphBuilderService {
 
     private final TransitiveDependencyRepo repository;
-
     private final Map<String, Map<String, List<String>>> graph = new HashMap<>();
 
     public GraphBuilderService(TransitiveDependencyRepo repository) {
@@ -20,11 +19,7 @@ public class GraphBuilderService {
     public void buildGraph() {
 
         graph.clear();
-
         List<TransitiveDependency> edges = repository.findAll();
-
-        System.out.println("Building Graph...");
-        System.out.println("Edges : " + edges.size());
 
         for (TransitiveDependency edge : edges) {
 
@@ -42,9 +37,6 @@ public class GraphBuilderService {
                     .add(edge.getChildLibrary());
 
         }
-
-        System.out.println("Applications in Graph : "
-                + graph.size());
 
     }
 

@@ -5,20 +5,19 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sbom.hackathon.dto.LicenseRuleDTO;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
 @Component
 public class LicenseRuleParser {
 
-    public List<LicenseRuleDTO> parse() {
+    public List<LicenseRuleDTO> parse(InputStream input){
 
         try {
 
             ObjectMapper mapper = new ObjectMapper();
 
-            InputStream input =
-                    getClass().getResourceAsStream("/data/license_rules.json");
 
             return mapper.readValue(
                     input,
@@ -26,9 +25,7 @@ public class LicenseRuleParser {
             );
 
         } catch (Exception e) {
-
             throw new RuntimeException(e);
-
         }
 
     }

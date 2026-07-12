@@ -7,6 +7,7 @@ import com.sbom.hackathon.repository.ApplicationRepo;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 
+import java.io.InputStream;
 import java.util.List;
 
 @Service
@@ -21,10 +22,10 @@ public class DataLoaderService {
         this.repository = repository;
     }
 
-    @PostConstruct
-    public void loadApplications() {
 
-        List<ApplicationDTO> applications = parser.parseApplications();
+    public void loadApplications(InputStream input) {
+
+        List<ApplicationDTO> applications = parser.parseApplications(input);
 
         for (ApplicationDTO dto : applications) {
 

@@ -7,6 +7,7 @@ import com.sbom.hackathon.repository.DependencyRepo;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 
+import java.io.InputStream;
 import java.util.List;
 
 @Service
@@ -23,11 +24,11 @@ public class DependencyLoader {
 
     }
 
-    @PostConstruct
-    public void loadDependencies(){
+
+    public void loadDependencies(InputStream input) {
 
         List<DependencyDTO> dependencies =
-                parser.parseDependencies();
+                parser.parseDependencies(input);
 
         for(DependencyDTO dto : dependencies){
 
@@ -48,9 +49,6 @@ public class DependencyLoader {
             repository.save(dependency);
 
         }
-
-
-        System.out.println("--------------------------------");
 
     }
 

@@ -12,14 +12,12 @@ import java.util.List;
 @Component
 public class DependencyParser {
 
-    public List<DependencyDTO> parseDependencies() {
+    public List<DependencyDTO> parseDependencies(InputStream inputStream) {
 
         List<DependencyDTO> dependencies = new ArrayList<>();
 
         try {
 
-            InputStream inputStream =
-                    getClass().getResourceAsStream("/data/sbom_dependencies.csv");
 
             CSVReader reader = new CSVReader(new InputStreamReader(inputStream));
 

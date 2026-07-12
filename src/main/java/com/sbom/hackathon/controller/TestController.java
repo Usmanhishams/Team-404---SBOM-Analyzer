@@ -21,15 +21,12 @@ public class TestController {
 
     @GetMapping("/test/{appId}")
     public RiskReportDTO test(@PathVariable String appId) {
-
         return service.analyzeApplication(appId);
-
     }
+
     @GetMapping("/analyze/all")
     public List<RiskReportDTO> analyzeAllApplications() {
-
         return service.analyzeAllApplications();
-
     }
 
 }
