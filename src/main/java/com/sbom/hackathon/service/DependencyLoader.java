@@ -49,9 +49,7 @@ public class DependencyLoader {
 
         }
 
-        System.out.println("--------------------------------");
-        System.out.println("Dependencies Loaded : "
-                + repository.count());
+
         System.out.println("--------------------------------");
 
     }

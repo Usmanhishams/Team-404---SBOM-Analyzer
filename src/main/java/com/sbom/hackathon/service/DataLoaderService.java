@@ -43,8 +43,6 @@ public class DataLoaderService {
             repository.save(app);
         }
 
-        System.out.println("--------------------------------");
-        System.out.println("Applications Loaded : " + repository.count());
-        System.out.println("--------------------------------");
+
     }
 }

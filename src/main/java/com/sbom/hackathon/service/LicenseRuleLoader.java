@@ -44,9 +44,7 @@ public class LicenseRuleLoader {
 
         }
 
-        System.out.println("--------------------------------");
-        System.out.println("License Rules Loaded : "
-                + repository.count());
+
         System.out.println("--------------------------------");
 
     }

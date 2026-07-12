@@ -8,25 +8,30 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.*;
 
 @Service
 public class TransitiveDependencyLoader {
 
     private final TransitiveDependencyParser parser;
     private final TransitiveDependencyRepo repository;
+    private final GraphBuilderService graphBuilderService;
 
     public TransitiveDependencyLoader(
             TransitiveDependencyParser parser,
-            TransitiveDependencyRepo repository) {
+            TransitiveDependencyRepo repository,
+            GraphBuilderService graphBuilderService) {
 
         this.parser = parser;
         this.repository = repository;
+        this.graphBuilderService = graphBuilderService;
     }
 
     @PostConstruct
     public void load() {
 
         List<TransitiveDependencyDTO> list = parser.parse();
+        System.out.println("Parsed DTOs = " + list.size());
 
         for (TransitiveDependencyDTO dto : list) {
 
@@ -46,12 +51,9 @@ public class TransitiveDependencyLoader {
             );
 
         }
+        System.out.println("Saved Records = " + repository.count());
 
-        System.out.println("--------------------------------");
-        System.out.println("Transitive Dependencies Loaded : "
-                + repository.count());
-        System.out.println("--------------------------------");
-
+        graphBuilderService.buildGraph();
     }
 
 }
