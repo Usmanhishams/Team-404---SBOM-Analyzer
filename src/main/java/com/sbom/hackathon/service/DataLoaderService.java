@@ -3,7 +3,7 @@ package com.sbom.hackathon.service;
 import com.sbom.hackathon.dto.ApplicationDTO;
 import com.sbom.hackathon.entity.Application;
 import com.sbom.hackathon.parser.ApplicationParser;
-import com.sbom.hackathon.repository.ApplicationRepository;
+import com.sbom.hackathon.repository.ApplicationRepo;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +13,10 @@ import java.util.List;
 public class DataLoaderService {
 
     private final ApplicationParser parser;
-    private final ApplicationRepository repository;
+    private final ApplicationRepo repository;
 
     public DataLoaderService(ApplicationParser parser,
-                             ApplicationRepository repository) {
+                             ApplicationRepo repository) {
         this.parser = parser;
         this.repository = repository;
     }
@@ -29,10 +29,15 @@ public class DataLoaderService {
         for (ApplicationDTO dto : applications) {
 
             Application app = new Application(
-                    dto.getId(),
+                    null,
+                    dto.getAppId(),
                     dto.getName(),
-                    dto.getOwner(),
-                    dto.getCriticality()
+                    dto.getLanguage(),
+                    dto.getCriticality(),
+                    dto.getLicenseModel(),
+                    dto.getBusinessOwner(),
+                    dto.getDepartment(),
+                    dto.getDeployment()
             );
 
             repository.save(app);

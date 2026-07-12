@@ -4,56 +4,34 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Application {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String appId;
+
     private String name;
-    private String owner;
+
+    private String language;
+
     private String criticality;
 
-    public Application(Long id, String name, String owner, String criticality) {
-        this.id = id;
-        this.name = name;
-        this.owner = owner;
-        this.criticality = criticality;
-    }
-    public Application(){}
+    private String licenseModel;
 
-    public Long getId() {
-        return id;
-    }
+    private String businessOwner;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    private String department;
 
-    public String getName() {
-        return name;
-    }
+    private String deployment;
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getOwner() {
-        return owner;
-    }
-
-    public void setOwner(String owner) {
-        this.owner = owner;
-    }
-
-    public String getCriticality() {
-        return criticality;
-    }
-
-    public void setCriticality(String criticality) {
-        this.criticality = criticality;
-    }
 }
